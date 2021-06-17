@@ -18,7 +18,7 @@ const Navbar = () => {
             {" "}CinemaX
           </Typography>
 
-          {location.pathname !== "/login" && location.pathname !== "/signup" && (
+          {location.pathname !== "/auth" && (
             <Box component="ul" display="flex">
               <Typography variant="subtitle1" className={classes.menuButton}>
                 <Link className={classes.link} to="/watch">
@@ -42,15 +42,10 @@ const Navbar = () => {
 
           {(location.pathname === "/" || location.pathname === "/watch" || location.pathname === "/get-ticketes" || location.pathname === "/premiere") && (
             <div className={classes.button}>
-              <Button component={Link} to="/signup" variant="contained" color="primary" disableElevation className={classes.menuButton}>
+              <Button component={Link} to="/auth" variant="contained" color="primary" disableElevation className={classes.menuButton}>
                 Sign Up
               </Button>
-              <Button
-                component={Link}
-                to="/login"
-                variant="outlined"
-                className={classes.menuButton}
-              >
+              <Button component={Link} to="/auth" variant="outlined" className={classes.menuButton}>
                 Login
               </Button>
             </div>

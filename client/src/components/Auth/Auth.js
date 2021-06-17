@@ -16,6 +16,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { signin, signup } from '../../actions/auth.js';
+import Input from './Input';
 
 import useStyles from "./styles";
 
@@ -38,7 +39,7 @@ const Auth = () => {
 
   const [form, setForm] = useState(initialState);
   const location = useLocation();
-  const [isSignup, setIsSignup] = useState(location.pathname === '/signup');
+  const [isSignup, setIsSignup] = useState(location.pathname === '/auth');
   const dispatch = useDispatch();
   const history = useHistory();
   const classes = useStyles();
@@ -95,9 +96,7 @@ const Auth = () => {
               <TextField variant="outlined" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" onChange= {handleChange}
               />
             </Grid>
-            <Grid item xs={12}>
-              <TextField variant="outlined" required fullWidth name="password" label="Password" type={showPassword ? "text" : "password"} id="password" autoComplete="current-password" onChange={handleChange} handleShowPassword={handleShowPassword}/>
-            </Grid>
+            <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
             <Grid item xs={12}>
               <FormControlLabel control={<Checkbox value="allowExtraEmails" color="primary" />} label="Remember Password"
               />
@@ -108,7 +107,7 @@ const Auth = () => {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link to="/login" variant="body2" onClick={switchMode}>
+              <Link to="/auth" variant="body2" onClick={switchMode}>
                 {isSignup ? 'Already have an account? Sign in': "Don't have an account? Sign Up"}
               </Link>
             </Grid>
