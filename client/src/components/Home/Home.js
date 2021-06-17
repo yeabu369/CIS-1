@@ -27,7 +27,7 @@ const Home = () => {
             cinema.
           </Typography>
           <div className={classes.createAccount}>
-            <Button component={Link} to="/signup" variant="contained" align="center" color="primary" disableElevation>
+            <Button component={Link} to="/auth/signup" variant="contained" align="center" color="primary" disableElevation>
               Create Account
             </Button>
           </div>

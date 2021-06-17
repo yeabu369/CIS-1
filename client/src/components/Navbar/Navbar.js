@@ -9,6 +9,8 @@ const Navbar = () => {
   const classes = useStyles();
   const location = useLocation();
 
+  console.log(location.pathname);
+
   return (
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
@@ -18,7 +20,7 @@ const Navbar = () => {
             {" "}CinemaX
           </Typography>
 
-          {location.pathname !== "/auth" && (
+          { (location.pathname !== "/auth/signup" || location.pathname !== "/auth/signin" || location.pathname !== "/signin" || location.pathname !== "/signup") && (
             <Box component="ul" display="flex">
               <Typography variant="subtitle1" className={classes.menuButton}>
                 <Link className={classes.link} to="/watch">
@@ -42,10 +44,10 @@ const Navbar = () => {
 
           {(location.pathname === "/" || location.pathname === "/watch" || location.pathname === "/get-ticketes" || location.pathname === "/premiere") && (
             <div className={classes.button}>
-              <Button component={Link} to="/auth" variant="contained" color="primary" disableElevation className={classes.menuButton}>
+              <Button component={Link} to="/auth/signup" variant="contained" color="primary" disableElevation className={classes.menuButton}>
                 Sign Up
               </Button>
-              <Button component={Link} to="/auth" variant="outlined" className={classes.menuButton}>
+              <Button component={Link} to="/auth/signin" variant="outlined" className={classes.menuButton}>
                 Login
               </Button>
             </div>
