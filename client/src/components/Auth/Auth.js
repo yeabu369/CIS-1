@@ -12,7 +12,7 @@ import {
   Container 
 } from '@material-ui/core';
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import { Link, useHistory, useParams, useLocation } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { signin, signup } from '../../actions/auth.js';
@@ -39,7 +39,6 @@ const Auth = () => {
 
   const { type } = useParams();
   const [form, setForm] = useState(initialState);
-  const location = useLocation();
   const [isSignup, setIsSignup] = useState(type === 'signup');
   const dispatch = useDispatch();
   const history = useHistory();
@@ -51,6 +50,10 @@ const Auth = () => {
   const switchMode = () => {
     setForm(initialState);
     setIsSignup((prevIsSignup) => !prevIsSignup);
+    if (isSignup)
+      history.push('/auth/signin');
+    else
+      history.push('/auth/signup');
     setShowPassword(false);
   };
 
@@ -108,7 +111,7 @@ const Auth = () => {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link to={ !isSignup ? '/auth/signup' : '/auth/signin'} variant="body2" onClick={switchMode}>
+              <Link to="#" variant="body2" onClick={switchMode}>
                 {isSignup ? 'Already have an account? Sign in': "Don't have an account? Sign Up"}
               </Link>
             </Grid>

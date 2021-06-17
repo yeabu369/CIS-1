@@ -9,8 +9,6 @@ const Navbar = () => {
   const classes = useStyles();
   const location = useLocation();
 
-  console.log(location.pathname);
-
   return (
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
@@ -20,7 +18,7 @@ const Navbar = () => {
             {" "}CinemaX
           </Typography>
 
-          { (location.pathname !== "/auth/signup" || location.pathname !== "/auth/signin" || location.pathname !== "/signin" || location.pathname !== "/signup") && (
+          { location.pathname !== "/auth/signup" && location.pathname !== "/auth/signin"  && (
             <Box component="ul" display="flex">
               <Typography variant="subtitle1" className={classes.menuButton}>
                 <Link className={classes.link} to="/watch">
