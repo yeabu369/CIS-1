@@ -33,7 +33,7 @@ function Copyright() {
   );
 }
 
-const initialState = {firstName: '', lastName: '', email: '', password: ''};
+const initialState = {firstname: '', lastname: '', email: '', password: ''};
 
 const Auth = () => {
 
@@ -87,11 +87,11 @@ const Auth = () => {
             { isSignup && (
               <>
                 <Grid item xs={12} sm={6}>
-                  <TextField autoComplete="fname" name="firstName" variant="outlined" required fullWidth id="firstName" label="First Name" autoFocus onChange={handleChange}
+                  <TextField autoComplete="fname" name="firstname" variant="outlined" required fullWidth id="firstName" label="First Name" autoFocus onChange={handleChange}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <TextField variant="outlined" required fullWidth id="lastName" label="Last Name" name="lastName" autoComplete="lname" onChange = {handleChange}
+                  <TextField variant="outlined" required fullWidth id="lastName" label="Last Name" name="lastname" autoComplete="lname" onChange = {handleChange}
                   />
                 </Grid>
               </>
