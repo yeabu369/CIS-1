@@ -97,7 +97,7 @@ const movies = [
             "Science Fiction"
         ]
     },
-]
+];
 
 
 const MovieCards = () => {

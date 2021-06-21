@@ -18,7 +18,7 @@ const Product = ({ movie }) => {
                     </Typography>
                 </div>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    {movie.overview}
+                    { movie.overview.length > 100 ? `${movie.overview.substring(0, 100)} ...` : movie.overview }
                 </Typography>
             </CardContent>
             <CardActions disableSpacing className={classes.cardActions}>
