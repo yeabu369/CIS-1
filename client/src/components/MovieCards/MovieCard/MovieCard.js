@@ -10,25 +10,24 @@ const Product = ({ movie }) => {
 
     return (
         <Card className={classes.root}>
-            <CardMedia className={classes.media} image={movie.media.source} title={movie.name} />
+            <CardMedia className={classes.media} image={movie.poster} title={movie.title} />
             <CardContent>
                 <div className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {movie.name}
-                    </Typography>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Br {movie.price}
+                        {movie.title}
                     </Typography>
                 </div>
-                <Typography dangerouslySetInnerHTML={{ __html: movie.description }} variant="body2" color="textSecondary" component="p" />
+                <Typography variant="body2" color="textSecondary" component="p">
+                    {movie.overview}
+                </Typography>
             </CardContent>
             <CardActions disableSpacing className={classes.cardActions}>
-            <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+                <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
+                </IconButton>
+                <IconButton aria-label="share">
+                    <ShareIcon />
+                </IconButton>
             </CardActions>
         </Card>
     )
