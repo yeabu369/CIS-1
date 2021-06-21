@@ -1,0 +1,3 @@
+tasks:
+  - init: cd client && npm install
+    command: npm start
