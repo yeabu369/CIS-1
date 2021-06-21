@@ -4,7 +4,81 @@ import Grid from '@material-ui/core/Grid';
 import MovieCard from './MovieCard/MovieCard';
 import useStyles from './styles';
 
-const MovieCards = ({ movies }) => {
+const movies = [
+    {
+        name: "Movie Name",
+        media: {
+            source: "Image URL"
+        },
+        price: 100.00,
+        description: "The movie description"
+    },
+    {
+        name: "Movie Name",
+        media: {
+            source: "Image URL"
+        },
+        price: 100.00,
+        description: "The movie description"
+    },
+    {
+        name: "Movie Name",
+        media: {
+            source: "Image URL"
+        },
+        price: 100.00,
+        description: "The movie description"
+    },
+    {
+        name: "Movie Name",
+        media: {
+            source: "Image URL"
+        },
+        price: 100.00,
+        description: "The movie description"
+    },
+    {
+        name: "Movie Name",
+        media: {
+            source: "Image URL"
+        },
+        price: 100.00,
+        description: "The movie description"
+    },
+    {
+        name: "Movie Name",
+        media: {
+            source: "Image URL"
+        },
+        price: 100.00,
+        description: "The movie description"
+    },
+    {
+        name: "Movie Name",
+        media: {
+            source: "Image URL"
+        },
+        price: 100.00,
+        description: "The movie description"
+    },
+    {
+        name: "Movie Name",
+        media: {
+            source: "Image URL"
+        },
+        price: 100.00,
+        description: "The movie description"
+    },
+    {
+        name: "Movie Name",
+        media: {
+            source: "Image URL"
+        },
+        price: 100.00,
+        description: "The movie description"
+    },
+]
+const MovieCards = () => {
     const classes = useStyles();
     
     if (!movies.length) return <p>Loading...</p>
