@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000/api/v1' });
+const API = axios.create({ baseURL: 'https://5000-turquoise-turkey-5k1umikf.ws-eu08.gitpod.io/api/v1' });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('profile')) {
