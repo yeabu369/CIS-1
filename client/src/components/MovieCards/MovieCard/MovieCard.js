@@ -1,12 +1,30 @@
 import React from 'react';
 import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import ShareIcon from '@material-ui/icons/Share';
+import { useDispatch } from 'react-redux';
 
 import useStyles from './styles';
 
-const Product = ({ movie }) => {
+const MovieCard = ({ movie }) => {
+    const dispatch = useDispatch();
     const classes = useStyles();
+    const user = JSON.parse(localStorage.getItem('profile'));
+  
+    const Likes = () => {
+      if (movie.likes.length > 0) {
+        return movie.likes.find((like) => like === (user?.result?.googleId || user?.result?._id))
+          ? (
+            <><FavoriteIcon/>&nbsp;{movie.likes.length}</>
+          ) : (
+            <><FavoriteOutlinedIcon/>&nbsp;{movie.likes.length}</>
+          );
+      }
+  
+      return <><FavoriteOutlinedIcon/>&nbsp;</>;
+    };
 
     return (
         <Card className={classes.root}>
@@ -17,20 +35,20 @@ const Product = ({ movie }) => {
                         {movie.title}
                     </Typography>
                 </div>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="body2" color="textPrimary" component="h2" gutterBottom>
+                    {movie.genres.map((tag) => `#${tag}   `)}
+                </Typography>
+                <Typography variant="body1" color="textSecondary" component="p" gutterTop>
                     { movie.overview.length > 100 ? `${movie.overview.substring(0, 100)} ...` : movie.overview }
                 </Typography>
             </CardContent>
             <CardActions disableSpacing className={classes.cardActions}>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                    <ShareIcon />
+                <IconButton>
+                    <Likes />
                 </IconButton>
             </CardActions>
         </Card>
     )
 }
 
-export default Product;
+export default MovieCard;

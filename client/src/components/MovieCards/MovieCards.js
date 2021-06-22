@@ -14,7 +14,8 @@ const movies = [
             "Action",
             "Comedy",
             "Fantasy"
-        ]
+        ],
+        "likes": []
     },
     {
         "id": "299537",
@@ -26,7 +27,8 @@ const movies = [
             "Action",
             "Adventure",
             "Science Fiction"
-        ]
+        ],
+        "likes": []
     },
     {
         "id": "522681",
@@ -39,7 +41,8 @@ const movies = [
             "Action",
             "Horror",
             "Science Fiction"
-        ]
+        ],
+        "likes": []
     },
     {
         "id": "166428",
@@ -51,7 +54,8 @@ const movies = [
             "Animation",
             "Family",
             "Adventure"
-        ]
+        ],
+        "likes": []
     },
     {
         "id": "450465",
@@ -61,7 +65,8 @@ const movies = [
         "release_date": 1547596800,
         "genres": [
             "Documentary"
-        ]
+        ],
+        "likes": []
     },
     {
         "id": "495925",
@@ -71,7 +76,8 @@ const movies = [
         "release_date": 1520035200,
         "genres": [
             "Animation"
-        ]
+        ],
+        "likes": []
     },
     {
         "id": "329996",
@@ -83,7 +89,8 @@ const movies = [
             "Adventure",
             "Family",
             "Fantasy"
-        ]
+        ],
+        "likes": []
     },
     {
         "id": "299536",
@@ -95,7 +102,8 @@ const movies = [
             "Adventure",
             "Action",
             "Science Fiction"
-        ]
+        ],
+        "likes": []
     },
 ];
 
