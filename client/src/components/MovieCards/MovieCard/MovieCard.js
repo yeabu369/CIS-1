@@ -6,6 +6,7 @@ import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import ShareIcon from '@material-ui/icons/Share';
 import { useDispatch } from 'react-redux';
 
+import { likeCard, deletCard } from '../../../actions/cards';
 import useStyles from './styles';
 
 const MovieCard = ({ movie }) => {
@@ -17,7 +18,7 @@ const MovieCard = ({ movie }) => {
       if (movie.likes.length > 0) {
         return movie.likes.find((like) => like === (user?.result?.googleId || user?.result?._id))
           ? (
-            <><FavoriteIcon/>&nbsp;{movie.likes.length}</>
+            <><FavoriteIcon color="secondary"/>&nbsp;{movie.likes.length}</>
           ) : (
             <><FavoriteOutlinedIcon/>&nbsp;{movie.likes.length}</>
           );
@@ -43,7 +44,7 @@ const MovieCard = ({ movie }) => {
                 </Typography>
             </CardContent>
             <CardActions disableSpacing className={classes.cardActions}>
-                <IconButton>
+                <IconButton onClick={() => dispatch(likeCard(movie.id))}>
                     <Likes />
                 </IconButton>
             </CardActions>

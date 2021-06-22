@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AppBar, Box, Toolbar, Button, Typography } from "@material-ui/core";
+import { AppBar, Box, Toolbar, Button, Typography, Avatar } from "@material-ui/core";
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
@@ -66,16 +66,24 @@ const Navbar = () => {
 
           <div className={classes.grow} />
 
-          {(location.pathname === "/" || location.pathname === "/watch" || location.pathname === "/get-tickets" || location.pathname === "/premiere") && (
-            <div className={classes.button}>
-              <Button component={Link} to="/auth/signup" variant="contained" color="primary" disableElevation className={classes.menuButton}>
-                Sign Up
-              </Button>
-              <Button component={Link} to="/auth/signin" variant="outlined" className={classes.menuButton}>
-                Login
-              </Button>
+          {user?.result ? (
+            <div className={classes.profile}>
+              <Avatar className={classes.purple} alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar>
+              <Typography className={classes.userName} variant="h6">{user?.result.name}</Typography>
+              <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
             </div>
-          )}
+          ) : 
+            (location.pathname === "/" || location.pathname === "/watch" || location.pathname === "/get-tickets" || location.pathname === "/premiere") && (
+              <div className={classes.button}>
+                <Button component={Link} to="/auth/signup" variant="contained" color="primary" disableElevation className={classes.menuButton}>
+                  Sign Up
+                </Button>
+                <Button component={Link} to="/auth/signin" variant="outlined" className={classes.menuButton}>
+                  Login
+                </Button>
+              </div>  
+            )
+          }
         </Toolbar>
       </AppBar>
     </>
