@@ -8,6 +8,7 @@ import {
   Label,
   ResponsiveContainer
 } from "recharts";
+
 import Title from "./Title";
 
 // Generate Sales Data
@@ -45,11 +46,7 @@ export default function Chart() {
         >
           <XAxis dataKey="time" stroke={theme.palette.text.secondary} />
           <YAxis stroke={theme.palette.text.secondary}>
-            <Label
-              angle={270}
-              position="left"
-              style={{ textAnchor: "middle", fill: theme.palette.text.primary }}
-            >
+            <Label angle={270} position="left" style={{ textAnchor: "middle", fill: theme.palette.text.primary }}>
               Sales ($)
             </Label>
           </YAxis>
