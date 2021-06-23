@@ -7,6 +7,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import PeopleIcon from "@material-ui/icons/People";
 import BarChartIcon from "@material-ui/icons/BarChart";
 import LayersIcon from "@material-ui/icons/Layers";
+import TheatersIcon from '@material-ui/icons/Theaters';
 
 export const mainListItems = (
   <div>
@@ -18,6 +19,12 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <ListItemIcon>
+        <TheatersIcon />
+      </ListItemIcon>
+      <ListItemText primary="Movie Catalog" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
         <ShoppingCartIcon />
       </ListItemIcon>
       <ListItemText primary="Orders" />
@@ -26,7 +33,7 @@ export const mainListItems = (
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="Users" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
