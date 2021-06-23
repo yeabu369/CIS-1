@@ -6,7 +6,7 @@ import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import ShareIcon from '@material-ui/icons/Share';
 import { useDispatch } from 'react-redux';
 
-import { likeCard, deletCard } from '../../../actions/cards';
+import { likeCard, deleteCard } from '../../../actions/cards';
 import useStyles from './styles';
 
 const MovieCard = ({ movie }) => {
