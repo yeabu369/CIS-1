@@ -1,9 +1,8 @@
 import React from 'react';
 import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/Delete';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
-import ShareIcon from '@material-ui/icons/Share';
+import DeleteIcon from '@material-ui/icons/Delete';
 import { useDispatch } from 'react-redux';
 
 import { likeCard, deleteCard } from '../../../actions/cards';
@@ -13,6 +12,7 @@ const MovieCard = ({ movie }) => {
     const dispatch = useDispatch();
     const classes = useStyles();
     const user = JSON.parse(localStorage.getItem('profile'));
+    const isAdmin = user.role === 'Admin' || false;
   
     const Likes = () => {
       if (movie.likes.length > 0) {
@@ -44,6 +44,9 @@ const MovieCard = ({ movie }) => {
                 </Typography>
             </CardContent>
             <CardActions disableSpacing className={classes.cardActions}>
+                {isAdmin ? (<IconButton onClick={() => dispatch(deleteCard(movie.id))}>
+                    <DeleteIcon />
+                </IconButton>) : null}
                 <IconButton onClick={() => dispatch(likeCard(movie.id))}>
                     <Likes />
                 </IconButton>
