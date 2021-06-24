@@ -33,7 +33,8 @@ const Navbar = () => {
     }
 
     setUser(JSON.parse(localStorage.getItem('profile')));
-  }, [location]);
+    // eslint-disable-next-line
+  }, [location, user?.token]);
 
   return (
     <>
@@ -68,9 +69,8 @@ const Navbar = () => {
 
           {user?.result ? (
             <div className={classes.profile}>
-              <Avatar className={classes.purple} alt={user?.result.FullName} src={user?.result.imageUrl}>{user?.result.FullName.charAt(0)}</Avatar>
-              <Typography className={classes.userName} variant="h6">{user?.result.name}</Typography>
-              <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
+              <Avatar className={classes.orange} alt={user?.result.FullName} src={user?.result.imageUrl}>{user?.result.FullName.charAt(0)}</Avatar>
+              <Button variant="outlined" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
             </div>
           ) : 
             (location.pathname === "/" || location.pathname === "/watch" || location.pathname === "/get-tickets" || location.pathname === "/premiere") && (

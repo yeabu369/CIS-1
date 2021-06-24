@@ -1,4 +1,5 @@
 import { makeStyles, fade } from "@material-ui/core/styles";
+import { deepOrange } from '@material-ui/core/colors';
 
 const drawerWidth = 0;
 
@@ -16,6 +17,19 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     display: "flex",
     textDecoration: "none"
+  },
+  profile: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '12%',
+  },
+  userName: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  orange: {
+    color: theme.palette.getContrastText(deepOrange[500]),
+    backgroundColor: deepOrange[500],
   },
   image: {
     marginRight: "10px"
