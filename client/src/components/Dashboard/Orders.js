@@ -17,21 +17,21 @@ const rows = [
   createData(
     0,
     "16 Mar, 2019",
-    "Elvis Presley",
+    "Abebe Presley",
     "TELEBIRR ⠀•••• 3719",
     312.44
   ),
   createData(
     1,
     "16 Mar, 2019",
-    "Paul McCartney",
+    "Chala Kebede",
     "TELEBIRR ⠀•••• 2574",
     866.99
   ),
   createData(
     2,
     "16 Mar, 2019",
-    "Tom Scholz",
+    "Kebede Scholz",
     "CBE ⠀•••• 1253",
     100.81
   ),
@@ -45,7 +45,7 @@ const rows = [
   createData(
     4,
     "15 Mar, 2019",
-    "Bruce Springsteen",
+    "Yeabsra Springsteen",
     "TELEBIRR ⠀•••• 5919",
     212.79
   )
