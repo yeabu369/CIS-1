@@ -12,7 +12,7 @@ const MovieCard = ({ movie }) => {
     const dispatch = useDispatch();
     const classes = useStyles();
     const user = JSON.parse(localStorage.getItem('profile'));
-    const isAdmin = user.role === 'Admin' || false;
+    const isAdmin = user?.role === 'Admin' || false;
   
     const Likes = () => {
       if (movie.likes.length > 0) {
