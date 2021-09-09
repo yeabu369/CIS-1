@@ -2,6 +2,6 @@
 
 ## A Cinema information system automation web app
 
-# ![CinemaX-Cinema Information App] (Movie-Showcase.png)
+![CinemaX-Cinema Information App] (Movie-Showcase.png)
 
 
